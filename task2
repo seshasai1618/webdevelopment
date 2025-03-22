@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #ff5f6d;
+            color: white;
+            padding: 15px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 50px 20px;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="container">
+            <h1>Landing Page</h1>
+            <nav>
+                <ul>
+                    <li><a onclick="showSection('home')">Home</a></li>
+                    <li><a onclick="showSection('about')">About</a></li>
+                    <li><a onclick="showSection('services')">Services</a></li>
+                    <li><a onclick="showSection('contact')">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Dynamic Content Section -->
+    <div class="content" id="content">
+        <h2>Welcome to Our Landing Page</h2>
+        <p>Click on the navigation menu to explore more details.</p>
+    </div>
+
+    <!-- JavaScript for Dynamic Content -->
+    <script>
+        function showSection(section) {
+            let content = document.getElementById("content");
+
+            if (section === "home") {
+                content.innerHTML = `
+                    <h2>Welcome to Our Home Page</h2>
+                    <p>We are a creative digital agency providing top-notch services.</p>
+                `;
+            } 
+            else if (section === "about") {
+                content.innerHTML = `
+                    <h2>About Us</h2>
+                    <p>We have been in the industry for over 10 years, helping businesses grow digitally.</p>
+                `;
+            } 
+            else if (section === "services") {
+                content.innerHTML = `
+                    <h2>Our Services</h2>
+                    <p>We offer user experience design, creative branding, and retina-ready graphics.</p>
+                `;
+            } 
+            else if (section === "contact") {
+                content.innerHTML = `
+                    <h2>Contact Us</h2>
+                    <p>For inquiries, reach out to us:</p>
+                    <p class="contact-info">📞 7993196102</p>
+                    <p class="contact-info">📧23102118@rmd.ac.in</p>
+                `;
+            }
+        }
+    </script>
+
+</body>
+</html>
